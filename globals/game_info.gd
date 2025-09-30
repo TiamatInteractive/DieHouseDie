@@ -46,8 +46,8 @@ func verify_fall_by_movement(height: Vector2i, direction: int) -> bool:
 func start_game():
 	actual_lifes = lifes
 	actual_score = 0
-	actual_round = 13
-	actual_difficult = 1
+	actual_round = 10
+	actual_difficult = 3
 	saved_score = false
 	spawner = null
 
