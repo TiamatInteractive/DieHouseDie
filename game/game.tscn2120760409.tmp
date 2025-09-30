@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5tfw2ukdy1i4"]
+
+[ext_resource type="Script" uid="uid://cmmcfg5dfitvi" path="res://game/game.gd" id="1_h7iqs"]
+[ext_resource type="Texture2D" uid="uid://ced48nsww2yom" path="res://assets/baseMap.png" id="2_4fuuu"]
+[ext_resource type="PackedScene" uid="uid://bwxk62vowl0ak" path="res://game/player.tscn" id="3_dxrkv"]
+[ext_resource type="PackedScene" uid="uid://dj4jgin2rn0e1" path="res://game/enemy.tscn" id="4_4fuuu"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_h7iqs")
+
+[node name="BaseMap" type="Sprite2D" parent="."]
+texture = ExtResource("2_4fuuu")
+
+[node name="Player" parent="." instance=ExtResource("3_dxrkv")]
+position = Vector2(0, -83)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Enemy" parent="Enemies" instance=ExtResource("4_4fuuu")]
+position = Vector2(-65, 67)
+verify = null
+height = Vector2i(2, 6)
+
+[connection signal="player_dead" from="Player" to="." method="_on_player_player_dead"]

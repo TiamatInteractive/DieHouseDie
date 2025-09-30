@@ -1,0 +1,95 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch3j6bo3h8kom"]
+
+[ext_resource type="Script" uid="uid://84uuhu7tvklg" path="res://UI/options.gd" id="1_b7fs8"]
+[ext_resource type="FontFile" uid="uid://cl0kjlbwipubq" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_m8fpw"]
+
+[node name="Options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b7fs8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_m8fpw")
+text = "Master Sound"
+
+[node name="MasterSlide" type="HSlider" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+min_value = -30.0
+max_value = 0.0
+ticks_on_borders = true
+
+[node name="Label5" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_m8fpw")
+text = "SFX Sound"
+
+[node name="SFXSlide" type="HSlider" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+min_value = -30.0
+max_value = 0.0
+ticks_on_borders = true
+
+[node name="Label6" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_m8fpw")
+text = "Music Sound"
+
+[node name="MusicSlide" type="HSlider" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+min_value = -30.0
+max_value = 0.0
+ticks_on_borders = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -94.0
+offset_top = -40.0
+offset_right = -22.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_m8fpw")
+text = "BACK"
+flat = true
+
+[connection signal="value_changed" from="CenterContainer/VBoxContainer/MasterSlide" to="." method="_on_master_slide_value_changed"]
+[connection signal="drag_ended" from="CenterContainer/VBoxContainer/SFXSlide" to="." method="_on_sfx_slide_drag_ended"]
+[connection signal="value_changed" from="CenterContainer/VBoxContainer/SFXSlide" to="." method="_on_sfx_slide_value_changed"]
+[connection signal="value_changed" from="CenterContainer/VBoxContainer/MusicSlide" to="." method="_on_music_slide_value_changed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

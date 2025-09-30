@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4yejg6upj60"]
+
+[ext_resource type="Script" uid="uid://cyxktbk215x5p" path="res://UI/player_score_ui.gd" id="1_76t3d"]
+[ext_resource type="FontFile" uid="uid://cl0kjlbwipubq" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_55c3u"]
+[ext_resource type="FontFile" uid="uid://cpunfi1nqp8lg" path="res://assets/fonts/PixelOperator8.ttf" id="3_nybva"]
+
+[node name="PlayerScoreUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_76t3d")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NameLabel" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_55c3u")
+theme_override_font_sizes/font_size = 16
+text = "NAME"
+
+[node name="ScoreLabel" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_nybva")
+text = "0"

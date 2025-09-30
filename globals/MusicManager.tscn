@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcs2jm1byyiji"]
+
+[ext_resource type="Script" uid="uid://b12l2q81o1nwx" path="res://globals/music_manager.gd" id="1_akawi"]
+[ext_resource type="AudioStream" uid="uid://cvbjw70stcfhx" path="res://assets/sounds/ingame-theme.mp3" id="2_vd5ym"]
+[ext_resource type="AudioStream" uid="uid://b7i2b6gnsqnrp" path="res://assets/sounds/menu_music.mp3" id="3_vd5ym"]
+
+[node name="MusicManager" type="Node"]
+script = ExtResource("1_akawi")
+
+[node name="GameTheme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_vd5ym")
+bus = &"Music"
+
+[node name="MenuTheme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_vd5ym")
+volume_db = -8.0
+bus = &"Music"

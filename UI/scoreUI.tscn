@@ -1,0 +1,140 @@
+[gd_scene load_steps=3 format=3 uid="uid://bd65s2r8v3me3"]
+
+[ext_resource type="Script" uid="uid://ddfsqrbosdny" path="res://UI/score_ui.gd" id="1_fy4yx"]
+[ext_resource type="FontFile" uid="uid://cl0kjlbwipubq" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_ck8dc"]
+
+[node name="Score" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fy4yx")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("2_ck8dc")
+text = "RANK SCORE       NAME"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_top = 23.0
+offset_right = 175.0
+offset_bottom = 46.0
+theme_override_fonts/font = ExtResource("2_ck8dc")
+text = "1ST"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_top = 41.0
+offset_right = 175.0
+offset_bottom = 90.0
+theme_override_fonts/font = ExtResource("2_ck8dc")
+text = "2ND"
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_top = 60.0
+offset_right = 175.0
+offset_bottom = 83.0
+theme_override_fonts/font = ExtResource("2_ck8dc")
+text = "3RD"
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 0
+offset_top = 77.0
+offset_right = 175.0
+offset_bottom = 100.0
+theme_override_fonts/font = ExtResource("2_ck8dc")
+text = "4TH"
+
+[node name="Label6" type="Label" parent="."]
+layout_mode = 0
+offset_top = 95.0
+offset_right = 175.0
+offset_bottom = 118.0
+theme_override_fonts/font = ExtResource("2_ck8dc")
+text = "5TH"
+
+[node name="ScoreLabel1" type="Label" parent="."]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 23.0
+offset_right = 349.0
+offset_bottom = 46.0
+theme_override_fonts/font = ExtResource("2_ck8dc")
+
+[node name="ScoreLabel2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 41.0
+offset_right = 349.0
+offset_bottom = 64.0
+theme_override_fonts/font = ExtResource("2_ck8dc")
+
+[node name="ScoreLabel3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 60.0
+offset_right = 349.0
+offset_bottom = 83.0
+theme_override_fonts/font = ExtResource("2_ck8dc")
+
+[node name="ScoreLabel4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 77.0
+offset_right = 349.0
+offset_bottom = 100.0
+theme_override_fonts/font = ExtResource("2_ck8dc")
+
+[node name="ScoreLabel5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 95.0
+offset_right = 349.0
+offset_bottom = 118.0
+theme_override_fonts/font = ExtResource("2_ck8dc")
+
+[node name="NameLabel1" type="Label" parent="."]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 23.0
+offset_right = 484.0
+offset_bottom = 46.0
+theme_override_fonts/font = ExtResource("2_ck8dc")
+
+[node name="NameLabel2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 41.0
+offset_right = 484.0
+offset_bottom = 64.0
+theme_override_fonts/font = ExtResource("2_ck8dc")
+
+[node name="NameLabel3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 60.0
+offset_right = 484.0
+offset_bottom = 83.0
+theme_override_fonts/font = ExtResource("2_ck8dc")
+
+[node name="NameLabel4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 77.0
+offset_right = 484.0
+offset_bottom = 100.0
+theme_override_fonts/font = ExtResource("2_ck8dc")
+
+[node name="NameLabel5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 95.0
+offset_right = 484.0
+offset_bottom = 118.0
+theme_override_fonts/font = ExtResource("2_ck8dc")

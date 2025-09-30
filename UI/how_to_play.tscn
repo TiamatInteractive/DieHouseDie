@@ -1,0 +1,158 @@
+[gd_scene load_steps=5 format=3 uid="uid://crn7j22ejiclp"]
+
+[ext_resource type="Script" uid="uid://h4731gwgg7t2" path="res://UI/credts_ui.gd" id="1_8s3ip"]
+[ext_resource type="FontFile" uid="uid://cl0kjlbwipubq" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_qfrwe"]
+[ext_resource type="Texture2D" uid="uid://rfxg5v8a6ukl" path="res://assets/enemies.png" id="3_qfrwe"]
+[ext_resource type="Texture2D" uid="uid://bh73v35k717kf" path="res://assets/dice.png" id="4_6lad0"]
+
+[node name="CredtsUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8s3ip")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label7" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -332.0
+offset_top = 210.0
+offset_right = 332.0
+offset_bottom = 435.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_qfrwe")
+text = "JUMP ON CUBES USING ARROWS TO MOVE YOUR DICE
+
+ROLL THE DIE AFTER LANDING:
+    •    1 = PUSH THE ENEMY
+    •    2-5 = ENEMY DIES ONLY IF LYING FLAT
+    •    6 = CRITICAL HIT (INSTANT KILL)
+
+HITTING AN ENEMY WHILE IT IS STANDING KILLS YOU
+PUSH ENEMIES OFF THE EDGE FOR EXTRA SCORE
+
+SURVIVE AS LONG AS YOU CAN!
+DIFFICULTY INCREASES EACH ROUND"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -94.0
+offset_top = -40.0
+offset_right = -22.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_qfrwe")
+text = "BACK"
+flat = true
+
+[node name="Label6" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -81.0
+offset_top = 104.0
+offset_right = 81.0
+offset_bottom = 120.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_qfrwe")
+theme_override_font_sizes/font_size = 32
+text = "HOW TO PLAY"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="Container" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Container"]
+position = Vector2(288, 291)
+texture = ExtResource("3_qfrwe")
+hframes = 10
+vframes = 15
+
+[node name="Sprite2D2" type="Sprite2D" parent="Container"]
+position = Vector2(389, 347)
+texture = ExtResource("3_qfrwe")
+hframes = 10
+vframes = 15
+frame = 4
+
+[node name="CriticalLabel" type="Label" parent="Container"]
+z_index = 1
+layout_mode = 0
+offset_left = 210.0
+offset_top = 310.0
+offset_right = 330.0
+offset_bottom = 333.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("2_qfrwe")
+theme_override_font_sizes/font_size = 8
+text = "CRITICAL"
+
+[node name="CriticalLabel2" type="Label" parent="Container"]
+z_index = 1
+layout_mode = 0
+offset_left = 312.0
+offset_top = 367.0
+offset_right = 432.0
+offset_bottom = 390.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("2_qfrwe")
+theme_override_font_sizes/font_size = 8
+text = "CRITICAL"
+
+[node name="Sprite2D3" type="Sprite2D" parent="Container"]
+position = Vector2(-301, 296)
+texture = ExtResource("4_6lad0")
+hframes = 9
+vframes = 3
+
+[node name="Sprite2D4" type="Sprite2D" parent="Container"]
+position = Vector2(-301, 296)
+texture = ExtResource("4_6lad0")
+hframes = 9
+vframes = 3
+frame = 10
+
+[node name="Sprite2D5" type="Sprite2D" parent="Container"]
+position = Vector2(-301, 296)
+texture = ExtResource("4_6lad0")
+hframes = 9
+vframes = 3
+frame = 20
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

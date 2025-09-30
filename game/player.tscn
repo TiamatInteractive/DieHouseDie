@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwxk62vowl0ak"]
+
+[ext_resource type="Script" uid="uid://dp0lp8ood0wlf" path="res://game/player.gd" id="1_w5y0b"]
+[ext_resource type="Texture2D" uid="uid://bh73v35k717kf" path="res://assets/dice.png" id="2_w5y0b"]
+[ext_resource type="FontFile" uid="uid://cl0kjlbwipubq" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_du4nq"]
+
+[node name="Player" type="Node2D"]
+position = Vector2(-5.662441e-07, -1.4901161e-07)
+scale = Vector2(0.06249999, 0.0625)
+script = ExtResource("1_w5y0b")
+
+[node name="MoveTimer" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1, 0.984375)
+texture = ExtResource("2_w5y0b")
+hframes = 9
+vframes = 3
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture = ExtResource("2_w5y0b")
+hframes = 9
+vframes = 3
+frame = 9
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+texture = ExtResource("2_w5y0b")
+hframes = 9
+vframes = 3
+frame = 18
+
+[node name="CriticalLabel" type="Label" parent="."]
+visible = false
+z_index = 1
+offset_left = -32.5
+offset_top = -16.0
+offset_right = 87.5
+offset_bottom = 7.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_du4nq")
+theme_override_font_sizes/font_size = 8
+text = "CRITICAL"
+
+[node name="CriticalTimer" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
+[connection signal="timeout" from="MoveTimer" to="." method="_on_move_timer_timeout"]
+[connection signal="timeout" from="CriticalTimer" to="." method="_on_critical_timer_timeout"]

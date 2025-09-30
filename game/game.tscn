@@ -1,0 +1,142 @@
+[gd_scene load_steps=7 format=3 uid="uid://c5tfw2ukdy1i4"]
+
+[ext_resource type="Script" uid="uid://cmmcfg5dfitvi" path="res://game/game.gd" id="1_h7iqs"]
+[ext_resource type="Texture2D" uid="uid://ced48nsww2yom" path="res://assets/baseMap.png" id="2_4fuuu"]
+[ext_resource type="Texture2D" uid="uid://blb033axdvjkr" path="res://assets/life.png" id="2_u5opy"]
+[ext_resource type="PackedScene" uid="uid://bwxk62vowl0ak" path="res://game/player.tscn" id="3_dxrkv"]
+[ext_resource type="FontFile" uid="uid://cpunfi1nqp8lg" path="res://assets/fonts/PixelOperator8.ttf" id="3_y36n6"]
+[ext_resource type="Texture2D" uid="uid://v7gnqltaf0mf" path="res://assets/diceMap.png" id="5_dxrkv"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_h7iqs")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = -408.0
+offset_top = -227.0
+offset_right = -368.0
+offset_bottom = -187.0
+scale = Vector2(20.346418, 11.444003)
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -192.0
+offset_top = -108.0
+offset_right = -152.0
+offset_bottom = -68.0
+scale = Vector2(9.600029, 5.399612)
+color = Color(0, 0, 0, 1)
+
+[node name="LifeSprite2D2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-159, -75)
+texture = ExtResource("2_u5opy")
+
+[node name="LifeSprite2D1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-176, -75)
+texture = ExtResource("2_u5opy")
+
+[node name="LifeSprite2D3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-142, -75)
+texture = ExtResource("2_u5opy")
+
+[node name="TimeNumberLabel" type="Label" parent="."]
+offset_left = 157.0
+offset_top = -106.0
+offset_right = 259.0
+offset_bottom = -83.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_y36n6")
+theme_override_font_sizes/font_size = 8
+text = "1:00"
+
+[node name="TimeLabel" type="Label" parent="."]
+offset_left = 122.0
+offset_top = -106.0
+offset_right = 224.0
+offset_bottom = -83.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_y36n6")
+theme_override_font_sizes/font_size = 8
+text = "TIME:"
+
+[node name="RoundNumberLabel" type="Label" parent="."]
+offset_left = 163.0
+offset_top = -93.0
+offset_right = 265.0
+offset_bottom = -70.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_y36n6")
+theme_override_font_sizes/font_size = 8
+text = "1"
+
+[node name="RoundLabel" type="Label" parent="."]
+offset_left = 122.0
+offset_top = -93.0
+offset_right = 224.0
+offset_bottom = -70.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_y36n6")
+theme_override_font_sizes/font_size = 8
+text = "ROUND:"
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = -183.0
+offset_top = -102.0
+offset_right = -99.0
+offset_bottom = -79.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_y36n6")
+text = "000000"
+
+[node name="BaseMap" type="Sprite2D" parent="."]
+texture = ExtResource("2_4fuuu")
+
+[node name="Player" parent="." instance=ExtResource("3_dxrkv")]
+position = Vector2(0, -92)
+scale = Vector2(1, 1.016)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Base2D" type="Sprite2D" parent="."]
+position = Vector2(157, -62)
+texture = ExtResource("5_dxrkv")
+hframes = 6
+
+[node name="Up2D" type="Sprite2D" parent="."]
+position = Vector2(167, -72)
+texture = ExtResource("5_dxrkv")
+hframes = 6
+
+[node name="Left2D" type="Sprite2D" parent="."]
+position = Vector2(147, -72)
+texture = ExtResource("5_dxrkv")
+hframes = 6
+
+[node name="Down2D" type="Sprite2D" parent="."]
+position = Vector2(147, -52)
+texture = ExtResource("5_dxrkv")
+hframes = 6
+
+[node name="Right2D" type="Sprite2D" parent="."]
+position = Vector2(167, -52)
+texture = ExtResource("5_dxrkv")
+hframes = 6
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+autostart = true
+
+[node name="RoundTimer" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+
+[connection signal="_on_movement" from="Player" to="." method="_on_movement"]
+[connection signal="player_dead" from="Player" to="." method="_on_player_player_dead"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
+[connection signal="timeout" from="RoundTimer" to="." method="_on_round_timer_timeout"]

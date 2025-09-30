@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://0qy6xhcu0y7i"
+path="res://.godot/imported/Round starts.mp3-5f4b1a0c10f0bc30b68c70dc0c1fbc1b.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Round starts.mp3"
+dest_files=["res://.godot/imported/Round starts.mp3-5f4b1a0c10f0bc30b68c70dc0c1fbc1b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

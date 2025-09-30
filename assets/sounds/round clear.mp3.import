@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bf1gcwesubqbi"
+path="res://.godot/imported/round clear.mp3-93b9cdb5442d8d9214d46549b13d5fb5.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/round clear.mp3"
+dest_files=["res://.godot/imported/round clear.mp3-93b9cdb5442d8d9214d46549b13d5fb5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

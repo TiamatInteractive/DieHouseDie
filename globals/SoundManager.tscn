@@ -1,0 +1,56 @@
+[gd_scene load_steps=10 format=3 uid="uid://bwk6jfctonhg5"]
+
+[ext_resource type="Script" uid="uid://cdaq6gaudqbns" path="res://globals/sound_manager.gd" id="1_vhlu6"]
+[ext_resource type="AudioStream" uid="uid://0qy6xhcu0y7i" path="res://assets/sounds/Round starts.mp3" id="2_ghdhu"]
+[ext_resource type="AudioStream" uid="uid://bf1gcwesubqbi" path="res://assets/sounds/round clear.mp3" id="3_1qtlp"]
+[ext_resource type="AudioStream" uid="uid://b6wk6pncl6nxj" path="res://assets/sounds/dice-step.mp3" id="4_wl168"]
+[ext_resource type="AudioStream" uid="uid://b3fxwie5s8siv" path="res://assets/sounds/kill.mp3" id="5_ghdhu"]
+[ext_resource type="AudioStream" uid="uid://b332wilheruh8" path="res://assets/sounds/death.mp3" id="6_1qtlp"]
+[ext_resource type="AudioStream" uid="uid://yeswshb33th0" path="res://assets/sounds/critical kill.mp3" id="7_wl168"]
+[ext_resource type="AudioStream" uid="uid://dxla05jikqvms" path="res://assets/sounds/gameover.mp3" id="8_lqqa7"]
+[ext_resource type="AudioStream" uid="uid://cavjpf5gjw0tr" path="res://assets/sounds/time score.wav" id="9_7n611"]
+
+[node name="SoundManager" type="Node"]
+script = ExtResource("1_vhlu6")
+
+[node name="RoundStart" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ghdhu")
+volume_db = -3.0
+bus = &"SFX"
+
+[node name="RoundEnd" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1qtlp")
+bus = &"RoundEnd"
+
+[node name="Step" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_wl168")
+volume_db = -4.0
+bus = &"SFX"
+
+[node name="Kill" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ghdhu")
+volume_db = -5.0
+bus = &"SFX"
+
+[node name="Death" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_1qtlp")
+bus = &"SFX"
+
+[node name="Critical_Kill" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_wl168")
+volume_db = -4.0
+bus = &"SFX"
+
+[node name="Game_Over" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_lqqa7")
+volume_db = -4.0
+bus = &"SFX"
+
+[node name="Time_bonus" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_7n611")
+volume_db = -4.0
+bus = &"SFX"
+
+[connection signal="finished" from="RoundStart" to="." method="_on_round_start_finished"]
+[connection signal="finished" from="RoundEnd" to="." method="_on_round_end_finished"]
+[connection signal="finished" from="Game_Over" to="." method="_on_game_over_finished"]
